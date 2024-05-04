@@ -1,6 +1,4 @@
-let firstNum;
-let secondNum;
-let operator;
+
 
 function operate(op,x,y){
     if (op =='+'){
@@ -147,3 +145,23 @@ function toScreen9(){
     screen.appendChild(add9);
     displayValue += 9;
 };
+
+let firstNum;
+let secondNum;
+let operator;
+
+
+
+
+
+// When add is clicked
+// Store displayValue in a firstNum 
+// make displayValue = 0
+// Make screen.textcontent = ''
+
+
+//When = is clicked 
+//store Displayvalue in secondNum 
+// Call operator to preform operation
+// make screen.textcontent = answer
+
