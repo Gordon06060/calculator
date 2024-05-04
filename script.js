@@ -8,10 +8,10 @@ function operate(op,x,y){
         subtractNumbers(x,y)
     }
     else if (op == '*'){
-        subtractNumbers(x,y)
+        muiltiplyNumbers(x,y)
     }
     else if (op == '/'){
-        subtractNumbers(x,y)
+        divideNumbers(x,y)
     }
 }
 
@@ -20,17 +20,17 @@ function addNumbers(x,y){
 }
 
 function subtractNumbers(x,y){
-    console.log(x-y);
+    screen.textContent = x-y;
     
 }
 
 function muiltiplyNumbers(x,y){
-    console.log(x*y);
+    screen.textContent = x*y;
 
 }
 
 function divideNumbers(x,y){
-    console.log(x/y);
+    screen.textContent = x/y;
 }
 
 
@@ -145,20 +145,22 @@ function toScreen9(){
     displayValue += 9;
 };
 
+//0
+const button0 = document.querySelector('#zero');
+button0.addEventListener('click', toScreen0);
+function toScreen0(){
+    const add0 = document.createElement('span');
+    add0.classList.add('zero');
+    add0.textContent = 0;
+    screen.appendChild(add0);
+    displayValue += 0;
+};
+
 let firstNum;
 let secondNum;
 let operator;
 
-
-
-
-
-// When add is clicked
-// Store displayValue in a firstNum 
-// Set operator = +
-// make displayValue = 0
-// Make screen.textcontent = ''
-
+//Add
 const addButton = document.querySelector('#add');
 addButton.addEventListener('click', addition);
 function addition(){
@@ -166,18 +168,61 @@ function addition(){
     operator = '+';
     screen.textContent='';
     displayValue = '';
-    console.log(firstNum);
 }
 
-//When = is clicked 
-//store Displayvalue in secondNum 
-// Call operator to preform operation
-// make screen.textcontent = answer
+// subtract
+const subButton = document.querySelector('#subtract');
+subButton.addEventListener('click', subtraction);
+function subtraction(){
+    firstNum = displayValue;
+    operator = '-';
+    screen.textContent='';
+    displayValue = '';
+}
+
+
+//divide 
+const divideButton = document.querySelector('#divide');
+divideButton.addEventListener('click', division);
+function division(){
+    firstNum = displayValue;
+    operator = '/';
+    screen.textContent='';
+    displayValue = '';
+}
+
+//muiltiply
+const muiltiplyButton = document.querySelector('#times');
+muiltiplyButton.addEventListener('click', muiltiply);
+function muiltiply(){
+    firstNum = displayValue;
+    operator = '*';
+    screen.textContent='';
+    displayValue = '';
+}
 
 const equalButton = document.querySelector('#equal');
 equalButton.addEventListener('click', equals);
 function equals(){
     secondNum = displayValue;
-    operate('+', +firstNum, +secondNum);
+    if (operator == '+'){
+        operate('+', +firstNum, +secondNum);
+    }
+    else if (operator == '-'){
+        operate('-', +firstNum, +secondNum);
+    }
+    else if (operator == '/'){
+        operate('/', +firstNum, +secondNum);
+    }
+    else if (operator == '*'){
+        operate('*', +firstNum, +secondNum);
+    }
+}
 
+
+const clearButton = document.querySelector('#clear');
+clearButton.addEventListener('click', clearScreen);
+function clearScreen(){
+    screen.textContent='';
+    displayValue = '';
 }
