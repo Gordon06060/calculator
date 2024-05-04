@@ -39,7 +39,7 @@ operate('/',4,2);
 
 //Calculator Display:
 const display = document.querySelector('#display');
-const screen = document.createElement('div');
+let screen = document.createElement('div');
 screen.classList.add('screen');
 display.appendChild(screen);
 let displayValue = '';
@@ -156,9 +156,18 @@ let operator;
 
 // When add is clicked
 // Store displayValue in a firstNum 
+// Set operator = +
 // make displayValue = 0
 // Make screen.textcontent = ''
 
+const addButton = document.querySelector('#add');
+addButton.addEventListener('click', addition);
+function addition(){
+    firstNum = displayValue;
+    operator = '+';
+    screen.textContent='';
+    displayValue = 0;
+}
 
 //When = is clicked 
 //store Displayvalue in secondNum 
