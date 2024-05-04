@@ -16,7 +16,7 @@ function operate(op,x,y){
 }
 
 function addNumbers(x,y){
-    console.log(x+y);
+    screen.textContent=x+y;
 }
 
 function subtractNumbers(x,y){
@@ -32,7 +32,6 @@ function muiltiplyNumbers(x,y){
 function divideNumbers(x,y){
     console.log(x/y);
 }
-operate('/',4,2);
 
 
 
@@ -166,7 +165,8 @@ function addition(){
     firstNum = displayValue;
     operator = '+';
     screen.textContent='';
-    displayValue = 0;
+    displayValue = '';
+    console.log(firstNum);
 }
 
 //When = is clicked 
@@ -174,3 +174,10 @@ function addition(){
 // Call operator to preform operation
 // make screen.textcontent = answer
 
+const equalButton = document.querySelector('#equal');
+equalButton.addEventListener('click', equals);
+function equals(){
+    secondNum = displayValue;
+    operate('+', +firstNum, +secondNum);
+
+}
