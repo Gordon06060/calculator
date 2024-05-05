@@ -169,11 +169,38 @@ addButton.addEventListener('click', addition);
 function addition(){
     if (operator !== undefined){
         secondNum = displayValue;
-        operate('+', +firstNum, +secondNum);
-        displayValue = screen.textContent;
-        firstNum = displayValue;
-        displayValue = '';
-        screen.textContent = '';
+        if (operator == '*'){
+            operate('*', +firstNum, +secondNum);
+            displayValue = screen.textContent;
+            firstNum = displayValue;
+            operator = '+';
+            displayValue='';
+            screen.textContent='';
+        }
+        else if(operator == '+'){
+            operate('+', +firstNum, +secondNum);
+            displayValue = screen.textContent;
+            firstNum = displayValue;
+            operator = '+';
+            displayValue='';
+            screen.textContent='';
+        }
+        else if (operator == '/'){
+            operate('/', +firstNum, +secondNum);
+            displayValue = screen.textContent;
+            firstNum = displayValue;
+            operator = '+';
+            displayValue='';
+            screen.textContent='';
+
+        }
+        else{
+            operate('+', +firstNum, +secondNum);
+            displayValue = screen.textContent;
+            firstNum = displayValue;
+            displayValue = '';
+            screen.textContent = '';
+        }
     }
     else{
         firstNum = displayValue;
@@ -189,11 +216,38 @@ subButton.addEventListener('click', subtraction);
 function subtraction(){
     if (operator !== undefined){
         secondNum = displayValue;
-        operate('-', +firstNum, +secondNum);
-        displayValue = screen.textContent;
-        firstNum = displayValue;
-        displayValue = '';
-        screen.textContent = '';
+        if (operator == '*'){
+            operate('*', +firstNum, +secondNum);
+            displayValue = screen.textContent;
+            firstNum = displayValue;
+            operator = '-';
+            displayValue='';
+            screen.textContent='';
+        }
+        else if(operator == '+'){
+            operate('+', +firstNum, +secondNum);
+            displayValue = screen.textContent;
+            firstNum = displayValue;
+            operator = '-';
+            displayValue='';
+            screen.textContent='';
+        }
+        else if (operator == '/'){
+            operate('/', +firstNum, +secondNum);
+            displayValue = screen.textContent;
+            firstNum = displayValue;
+            operator = '-';
+            displayValue='';
+            screen.textContent='';
+
+        }
+        else{
+            operate('-', +firstNum, +secondNum);
+            displayValue = screen.textContent;
+            firstNum = displayValue;
+            displayValue = '';
+            screen.textContent = '';
+        }
     }
     else{
         firstNum = displayValue;
@@ -226,7 +280,7 @@ function division(){
             displayValue='';
             screen.textContent='';
         }
-        else if (operator = '-'){
+        else if (operator == '-'){
             operate('-', +firstNum, +secondNum);
             displayValue = screen.textContent;
             firstNum = displayValue;
@@ -257,11 +311,38 @@ muiltiplyButton.addEventListener('click', muiltiply);
 function muiltiply(){
     if (operator !== undefined){
         secondNum = displayValue;
-        operate('*', +firstNum, +secondNum);
-        displayValue = screen.textContent;
-        firstNum = displayValue;
-        displayValue = '';
-        screen.textContent = '';
+        if (operator == '/'){
+            operate('/', +firstNum, +secondNum);
+            displayValue = screen.textContent;
+            firstNum = displayValue;
+            operator = '*';
+            displayValue='';
+            screen.textContent='';
+        }
+        else if(operator == '-'){
+            operate('-', +firstNum, +secondNum);
+            displayValue = screen.textContent;
+            firstNum = displayValue;
+            operator = '*';
+            displayValue='';
+            screen.textContent='';
+        }
+        else if (operator == '+'){
+            operate('+', +firstNum, +secondNum);
+            displayValue = screen.textContent;
+            firstNum = displayValue;
+            operator = '*';
+            displayValue='';
+            screen.textContent='';
+
+        }
+        else{
+            operate('*', +firstNum, +secondNum);
+            displayValue = screen.textContent;
+            firstNum = displayValue;
+            displayValue = '';
+            screen.textContent = '';
+        }
     }
     else{
         firstNum = displayValue;
