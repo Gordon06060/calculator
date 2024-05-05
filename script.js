@@ -247,6 +247,7 @@ clearButton.addEventListener('click', clearScreen);
 function clearScreen(){
     screen.textContent='';
     displayValue = '';
+    operator = undefined;
 }
 
 
