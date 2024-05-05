@@ -183,22 +183,24 @@ function addition(){
     }
 }
 
-//When pressing add, I am: 
-//taking whats on the dispay it on the screen
-// assigning operator
-//clearing screen
-// clearing the displayvalue 
-//Before assigning operator, check if operator has already been assigned
-// Need to make it so that if another operator has been clicked, just calculate it and assign that to firstnum 
-
 // subtract
 const subButton = document.querySelector('#subtract');
 subButton.addEventListener('click', subtraction);
 function subtraction(){
-    firstNum = displayValue;
-    operator = '-';
-    screen.textContent='';
-    displayValue = '';
+    if (operator !== undefined){
+        secondNum = displayValue;
+        operate('-', +firstNum, +secondNum);
+        displayValue = screen.textContent;
+        firstNum = displayValue;
+        displayValue = '';
+        screen.textContent = '';
+    }
+    else{
+        firstNum = displayValue;
+        screen.textContent='';
+        displayValue = '';
+        operator = '-';
+    }
 }
 
 
@@ -206,20 +208,40 @@ function subtraction(){
 const divideButton = document.querySelector('#divide');
 divideButton.addEventListener('click', division);
 function division(){
-    firstNum = displayValue;
-    operator = '/';
-    screen.textContent='';
-    displayValue = '';
+    if (operator !== undefined){
+        secondNum = displayValue;
+        operate('/', +firstNum, +secondNum);
+        displayValue = screen.textContent;
+        firstNum = displayValue;
+        displayValue = '';
+        screen.textContent = '';
+    }
+    else{
+        firstNum = displayValue;
+        screen.textContent='';
+        displayValue = '';
+        operator = '/';
+    }
 }
 
 //muiltiply
 const muiltiplyButton = document.querySelector('#times');
 muiltiplyButton.addEventListener('click', muiltiply);
 function muiltiply(){
-    firstNum = displayValue;
-    operator = '*';
-    screen.textContent='';
-    displayValue = '';
+    if (operator !== undefined){
+        secondNum = displayValue;
+        operate('*', +firstNum, +secondNum);
+        displayValue = screen.textContent;
+        firstNum = displayValue;
+        displayValue = '';
+        screen.textContent = '';
+    }
+    else{
+        firstNum = displayValue;
+        screen.textContent='';
+        displayValue = '';
+        operator = '*';
+    }
 }
 
 //equal button 
