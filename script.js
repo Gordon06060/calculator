@@ -218,6 +218,23 @@ function division(){
             displayValue='';
             screen.textContent='';
         }
+        else if(operator == '+'){
+            operate('+', +firstNum, +secondNum);
+            displayValue = screen.textContent;
+            firstNum = displayValue;
+            operator = '/';
+            displayValue='';
+            screen.textContent='';
+        }
+        else if (operator = '-'){
+            operate('-', +firstNum, +secondNum);
+            displayValue = screen.textContent;
+            firstNum = displayValue;
+            operator = '/';
+            displayValue='';
+            screen.textContent='';
+
+        }
         else{
             operate('/', +firstNum, +secondNum);
             displayValue = screen.textContent;
