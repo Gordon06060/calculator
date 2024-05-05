@@ -30,7 +30,12 @@ function muiltiplyNumbers(x,y){
 }
 
 function divideNumbers(x,y){
-    screen.textContent = x/y;
+    if (y==0){
+        screen.textContent = "Can't divide by 0!";
+    }
+    else{
+        screen.textContent = x/y;
+    }
 }
 
 
@@ -380,6 +385,3 @@ function clearScreen(){
     operator = undefined;
 }
 
-
-// Add something where I can string together calculations, and if I add another operator it first calculate sthe previous calculation
-// make it so that it calculates every time a second operator is pressed
