@@ -160,15 +160,36 @@ let firstNum;
 let secondNum;
 let operator;
 
+
+
+
 //Add
 const addButton = document.querySelector('#add');
 addButton.addEventListener('click', addition);
 function addition(){
-    firstNum = displayValue;
-    operator = '+';
-    screen.textContent='';
-    displayValue = '';
+    if (operator !== undefined){
+        secondNum = displayValue;
+        operate('+', +firstNum, +secondNum);
+        displayValue = screen.textContent;
+        firstNum = displayValue;
+        displayValue = '';
+        screen.textContent = '';
+    }
+    else{
+        firstNum = displayValue;
+        screen.textContent='';
+        displayValue = '';
+        operator = '+';
+    }
 }
+
+//When pressing add, I am: 
+//taking whats on the dispay it on the screen
+// assigning operator
+//clearing screen
+// clearing the displayvalue 
+//Before assigning operator, check if operator has already been assigned
+// Need to make it so that if another operator has been clicked, just calculate it and assign that to firstnum 
 
 // subtract
 const subButton = document.querySelector('#subtract');
@@ -201,6 +222,7 @@ function muiltiply(){
     displayValue = '';
 }
 
+//equal button 
 const equalButton = document.querySelector('#equal');
 equalButton.addEventListener('click', equals);
 function equals(){
@@ -226,3 +248,7 @@ function clearScreen(){
     screen.textContent='';
     displayValue = '';
 }
+
+
+// Add something where I can string together calculations, and if I add another operator it first calculate sthe previous calculation
+// make it so that it calculates every time a second operator is pressed
