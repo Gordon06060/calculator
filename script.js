@@ -210,11 +210,21 @@ divideButton.addEventListener('click', division);
 function division(){
     if (operator !== undefined){
         secondNum = displayValue;
-        operate('/', +firstNum, +secondNum);
-        displayValue = screen.textContent;
-        firstNum = displayValue;
-        displayValue = '';
-        screen.textContent = '';
+        if (operator == '*'){
+            operate('*', +firstNum, +secondNum);
+            displayValue = screen.textContent;
+            firstNum = displayValue;
+            operator = '/';
+            displayValue='';
+            screen.textContent='';
+        }
+        else{
+            operate('/', +firstNum, +secondNum);
+            displayValue = screen.textContent;
+            firstNum = displayValue;
+            displayValue = '';
+            screen.textContent = '';
+        }
     }
     else{
         firstNum = displayValue;
